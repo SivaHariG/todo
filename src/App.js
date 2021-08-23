@@ -1,17 +1,27 @@
 import { React, useEffect } from 'react';
-import './App.scss';
-import context from './core/context';
+// import './App.scss';
 import SampleService from './services/sample';
-import SimpleButton from './components/simpleButton';
+
+import todoInput from './components/todoInput';
+import todoButton from './components/todoButton';
+import todoList from './components/todoList';
+
+import context from './core/context';
 
 const App = () => {
 	useEffect(SampleService.sayHai, []);
 
 	return (
 		<div className="App">
-			<div>Count: { context.state.count }</div>
-			<div>{ SimpleButton() }</div>
-			<div>Refresh ID: { context.state.refreshID }</div>
+			{todoInput()}
+			<div>{context.state.input}</div>
+			<ol>
+				{
+					context.state.todoArr.map(todoList)
+				}
+			</ol>
+			<div>{todoButton()}</div>
+
 		</div>
 	);
 };
