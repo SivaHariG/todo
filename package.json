@@ -68,13 +68,13 @@
   "description": "Project description.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Laufire/react-starter.git"
+    "url": "git+https://github.com/SivaHariG/todo.git"
   },
   "author": "Laufire Technologies",
   "bugs": {
-    "url": "https://github.com/Laufire/react-starter/issues"
+    "url": "https://github.com/SivaHariG/todo.git"
   },
-  "homepage": "https://laufire.github.io/react-starter",
+  "homepage": "https://github.com/SivaHariG/todo.git",
   "keywords": [
     "simple",
     "react",

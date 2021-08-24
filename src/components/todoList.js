@@ -7,6 +7,7 @@
 import React from 'react';
 import context from '../core/context';
 
+// eslint-disable-next-line max-lines-per-function
 const todoList = (props) => {
     const { isCompleted, deleteTodo } = context.actions;
     const { id, todoValue, completed } = props;
@@ -24,7 +25,10 @@ const todoList = (props) => {
         >Remove
         </button>
         <button
-            onClick={() => { }}
+            onClick={() => {
+                context.actions.addInput(todoValue);
+                context.actions.editTodo('');
+            }}
         >Edit</button>
     </li>;
 };
