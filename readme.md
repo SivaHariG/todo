@@ -51,3 +51,33 @@ $  pnpm run test-ci
 * Audit the packages. It's not done, yet. Due to poor understanding of the dependencies.
 
 * Try moving away from create-react-app, as it introduces a lot of constraints, including reconfiguring jest.
+
+
+import todoButton from './todoButton';
+import context from '../core/context';
+import { render, fireEvent } from '@testing-library/react';
+
+jest.mock('../core/context', () => ({
+	state:	{ input: Symbol('input') },
+	actions: { addToTodo: jest.fn() },
+}));
+describe('todo button ', () => {
+	const { actions } = context;
+
+	test('button render Test', () => {
+		const component = render(todoButton()).getByRole('todoButton');
+
+		expect(component).toBeInTheDocument();
+	});
+
+	test.only('click event ', () => {
+		jest.spyOn(actions, 'addToTodo');
+
+		const component = render(todoButton()).getByRole('todoButton');
+
+		fireEvent.click(component);
+
+		expect(actions.addToTodo)
+			.toHaveBeenCalledWith(context.state.input);
+	});
+});
