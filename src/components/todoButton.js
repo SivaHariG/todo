@@ -8,10 +8,10 @@ import context from '../core/context';
 
 const todoButton = () =>
     <button
-        onClick={() => {
-            // eslint-disable-next-line no-unused-expressions
-            context.actions.addToTodo(context.state.input);
-        }}
+			role="todoButton"
+			onClick={() => {
+					context.actions.addToTodo(context.state.input);
+			}}
     >
         Add Text
     </button>;
