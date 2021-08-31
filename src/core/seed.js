@@ -6,6 +6,7 @@ const refreshIDLength = 4;
 const seed = {
 	input: '',
 	todoArr: [],
+	editing: null,
 	count: config.countStart,
 	refreshID: rndString(refreshIDLength),
 };

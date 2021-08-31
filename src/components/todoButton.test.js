@@ -15,13 +15,12 @@ describe('todo button ', () => {
 		expect(component).toBeInTheDocument();
 	});
 
-	test.only('click event ', () => {
+	test('click event ', () => {
 		jest.spyOn(actions, 'addToTodo');
 
 		const component = render(todoButton()).getByRole('todoButton');
 
 		fireEvent.click(component);
-
 		expect(actions.addToTodo)
 			.toHaveBeenCalledWith(context.state.input);
 	});
