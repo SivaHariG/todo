@@ -3,6 +3,7 @@ import context from '../core/context';
 
 const EditTextButton = () =>
 	<button
+		role="EditTextButton"
 		onClick={ () => { context.actions.editTodo(); } }
 	>
 		Edit Text

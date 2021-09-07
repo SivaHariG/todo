@@ -3,6 +3,7 @@ import context from '../core/context';
 
 const RemoveTodo = (id) =>
 	<button
+		role="removeButton"
 		onClick={ () => { context.actions.deleteTodo(id); } }
 	>Remove
 	</button>;

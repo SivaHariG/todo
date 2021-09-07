@@ -6,7 +6,7 @@ import RemoveTodo from './removeTodo';
 const TodoItem = (todo) => {
 	const { id } = todo;
 
-	return <li key={ id }>
+	return <li key={ id } role="todoItem">
 		{CompletedCheckbox(todo)}
 		{RemoveTodo(id)}
 		{EditTodo(todo)}
